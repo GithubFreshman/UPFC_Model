@@ -172,5 +172,26 @@ Contains
         ALLOCATE(blm0(B_coln))             !串联支路电导 p.u.
     end subroutine ALLOCATE_ARRAY
 
-
+    SUBROUTINE writeformat()
+        implicit none
+        integer :: a =1 , aa = 10
+        character(len = 1) :: b = '1'
+        character(len = 2) :: bb = '12'
+        
+        WRITE(*,*) 'aaaa' 
+        
+        WRITE(*,850) !给自定义模型的dyr文件的数据按一定格式添加注释
+        850 FORMAT(1X,T2,'/',T6,'BUSID',T19,'''USRMDL''',T36,'IM',T43,'''MlName''',T60,'IC',&
+        T72,'IT',T84,'NI',T96,'NC',T108,'NS',T120,'NV','/'/)
+        
+        WRITE(*,900) a, b
+        WRITE(*,900) aa, bb
+        
+        900 FORMAT(1X,I6,T19,'''USRMDL''', T37,A,T43,'''ZJUVSC''',&
+        '          1           0          13          55         450         500',/)
+        
+       
+        Return
+    End subroutine writeformat
+    
 end module SetPara

@@ -3,9 +3,11 @@ program test
     Use SetPara ! 
     implicit none
     print *, 'Test!'
-    Call ReadFile
-    print *, "N_VSC, Pole, Sbase"
-    print *, N_VSC, Pole, Sbase
+!    Call ReadFile
+!    print *, "N_VSC, Pole, Sbase"
+!    print *, N_VSC, Pole, Sbase
+
+    Call writeformat
     print *, 'Test Finishes!'
 !end subroutine test
 end program test
